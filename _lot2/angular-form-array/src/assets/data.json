@@ -1,0 +1,14 @@
+[
+  {
+    "hotel": "Hilton",
+    "date": "22-Sep",
+    "occupancyRate": "41.5",
+    "prixMax": "75"
+  },
+  {
+    "hotel": "Hilton",
+    "date": "23-Sep",
+    "occupancyRate": "61.5",
+    "prixMax": "100"
+  }
+ ]

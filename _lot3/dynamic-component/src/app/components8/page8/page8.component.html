@@ -1,0 +1,27 @@
+<p>page8 works!</p>
+
+<ng-template #estimateTemplate let-lessonsCounter="estimate">
+  <div> Approximately {{lessonsCounter}} lessons ...</div>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="estimateTemplate;context:ctx"></ng-container>
+
+<hr>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+
+
+<div *ngIf="lessons else loading">
+  <p *ngFor="let lesson of lessons">{{lesson}}</p>
+</div>
+
+<!-- OU -->
+
+<ng-template [ngIf]="lessons" [ngIfElse]="loading">
+    <p *ngFor="let lesson of lessons">{{lesson}}</p>
+</ng-template>
+
+
+

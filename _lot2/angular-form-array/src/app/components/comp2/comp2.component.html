@@ -1,0 +1,13 @@
+<p>comp2 works!</p>
+
+<form [formGroup]="user" (ngSubmit)="onSubmit()">
+  <input formControlName="name" />
+
+  <ng-container formArrayName="skills">
+    <div *ngFor="let _ of skills.controls; index as i">
+      <input [formControlName]="i" />
+    </div>
+  </ng-container>
+
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</form>

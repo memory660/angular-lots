@@ -1,0 +1,38 @@
+<h1>My Todo List</h1>
+
+<div class="row" *ngFor="let task of allTasks$ | async">
+  <mat-checkbox
+    [id]="task.id"
+    [checked]="task.isComplete"
+    (change)="toggleTask(task)"
+    [disabled]="!(isOnline$ | async)"
+  >
+  </mat-checkbox>
+
+  <label [attr.for]="task.id">{{ task.name }}</label>
+
+  <button
+    mat-raised-button
+    class="delete"
+    (click)="deleteTask(task.id)"
+    [disabled]="!(isOnline$ | async)"
+    color="warn"
+  >
+    DELETE
+  </button>
+</div>
+
+<form class="row form" (ngSubmit)="createTask($event)">
+  <mat-form-field class="example-full-width">
+    <input
+      name="Task Name"
+      matInput
+      placeholder="Task Name"
+      [(ngModel)]="newCity"
+    />
+  </mat-form-field>
+
+  <div class="btn-parent">
+    <button mat-raised-button type="submit" color="primary">ADD</button>
+  </div>
+</form>

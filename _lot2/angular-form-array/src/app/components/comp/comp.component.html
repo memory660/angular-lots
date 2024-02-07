@@ -1,0 +1,10 @@
+<p>comp works!</p>
+
+
+  <div *ngFor="let day of days.controls;">
+    <ng-container [formGroup]="day">
+      <input formControlName="date" />
+
+    </ng-container>
+  </div>
+

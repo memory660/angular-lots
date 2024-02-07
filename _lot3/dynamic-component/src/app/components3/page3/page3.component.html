@@ -1,0 +1,12 @@
+<p>page3 works!</p>
+
+<button (click)="openModalText()">with Text</button>
+<button (click)="openModalComponent()">with Component</button>
+<button (click)="openModalTemplate()">with Template</button>
+
+<ng-template #tpl>
+  <div style="background: lightpink;">
+    <h1>Login</h1>
+    <button (click)="click()">Submit</button>
+  </div>
+</ng-template>

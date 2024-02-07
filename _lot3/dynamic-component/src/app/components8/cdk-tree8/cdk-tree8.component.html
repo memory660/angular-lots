@@ -1,0 +1,17 @@
+<h1>cdk-tree8</h1>
+***
+<ng-template #referenceToTheTemplate let-node="data">
+  <div>{{ node.label }}</div>
+<ng-template>
+
+<ng-container
+  [ngTemplateOutlet]="referenceToTheTemplate"
+  [ngTemplateOutletContext]="{ data: { label: 'My node' } }">
+</ng-container>
+***
+
+<!--
+ngTemplateOutlet                  une réference au template
+ngTemplateOutletContext           une réference au template + passage de données
+-->
+

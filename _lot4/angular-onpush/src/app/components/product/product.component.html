@@ -1,0 +1,11 @@
+<div style="background: rgb(255, 227, 174); padding: 12px;">
+
+  <p>product works! -    changeDetection: ChangeDetectionStrategy.OnPush,</p>
+
+  product?.name = {{product?.name}}
+
+  <app-name [name]="product?.name"></app-name>
+
+  <button (click)="update()">update</button>
+
+</div>

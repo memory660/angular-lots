@@ -1,0 +1,24 @@
+<p>products works!</p>
+
+{{products|json}}
+
+<button (click)="update1()">update 1</button>
+<button (click)="update2()">update 2</button>
+
+<hr>
+
+<div *ngIf="products" style="background: lightpink; padding: 12px;">
+
+  <p *ngFor="let product of products">
+    <app-product [product]="product" style="background: lightskyblue;"></app-product>
+  </p>
+
+</div>
+
+
+
+<hr>
+
+<h2>changeDetection: ChangeDetectionStrategy.OnPush</h2>
+
+

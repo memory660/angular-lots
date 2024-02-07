@@ -1,0 +1,33 @@
+<p>my-counter works!</p>
+
+<div class="row text-center">
+  <div class="col">
+    <h1 class="mat-display-1 mt-0 mb-2">Counter</h1>
+    <h1>counter = {{ counter }}</h1>
+
+    <button mat-raised-button
+            color="primary"
+            class="mr-1"
+            (click)="increment()">Increment</button>
+
+    <button mat-raised-button
+            class="blue mr-1"
+            (click)="decrement()">Decrement</button>
+
+    <button mat-raised-button
+            class="mr-1"
+            (click)="multiply()">Multiply</button>
+
+    <button mat-raised-button
+            color="accent"
+            class="mr-1"
+            (click)="divide()">Divide</button>
+
+    <button mat-raised-button
+            color="warn"
+            class="mr-1"
+            (click)="reset()">Reset</button>
+  </div>
+</div>
+
+

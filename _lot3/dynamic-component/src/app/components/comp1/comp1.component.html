@@ -1,0 +1,39 @@
+<p>comp1 works!</p>
+
+(1)
+<ng-template #temp>
+	xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</ng-template>
+
+<hr>
+(2)
+
+<ul>
+  <li #thankYouItem *ngFor="let thanksToItem of thanksTo">
+    Thank you, {{thanksToItem}}!
+  </li>
+</ul>
+
+<hr>
+(3)
+<app-message [message]="message"></app-message>
+
+<hr>
+(4)
+
+<app-message2 *ngFor="let f of messages" [message2]='f'></app-message2>
+
+<hr>
+(5)
+
+<app-message-container>
+  <app-message2 [message2]='message'></app-message2>
+  <app-message3 [message3]='message'></app-message3>
+</app-message-container>
+
+
+<hr>
+
+
+
+<hr>

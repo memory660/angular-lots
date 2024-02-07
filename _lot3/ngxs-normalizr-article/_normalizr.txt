@@ -1,0 +1,89 @@
+==================================================================
+==================================================================
+			NORMALISER LES DONNEES
+==================================================================
+==================================================================
+
+* non normalisé
+___
+{
+  pokemons: [
+    {
+      id: 1,
+      name: 'Bulbasaur',
+      type: {
+        id: 1,
+        name: 'Grass 🌿',
+        weaknesses: [
+          { id: 2, name: 'Fire 🔥' },
+        ],
+        resistances : [
+          { id: 3, name: 'Water 🌊' },
+        ]
+      }
+    },
+    {
+      id: 2,
+      name: 'Charmander',
+      type: {
+        id: 2,
+        name: 'Fire 🔥',
+        weaknesses: [
+          {id: 3, name: 'Water 🌊'}
+        ],
+        resistances: [
+          {id: 1, name: 'Grass 🌿'}
+        ],
+      },
+    },
+}
+___
+
+* normalisé
+___
+{
+  pokemons: {
+    byId: {
+      1: {
+        id: 1,
+        name: 'Bulbasaur',
+        type: 1,
+      },
+      2: {
+        id: 2,
+        name: 'Charmander',
+        type: 2,
+      },
+      // More pokemons
+    },
+    allIds: [1, 2, 3],
+  },
+  types: {
+    byId: {
+      1: {
+        id: 1,
+        name: 'Grass 🌿',
+        weaknesses: [ 2 ],
+        resistances : [ 3 ]
+        },
+      2: {
+        id: 2,
+        name: 'Fire 🔥',
+        weaknesses: [ 3 ],
+        resistances: [ 1 ],
+      },
+      3 : {
+        id: 3,
+        name: 'Water 🌊',
+        weaknesses: [ 1 ],
+        resistances: [ 2 ],
+      },
+    },
+    allIds: [1, 2, 3],
+  },
+}
+___
+
+- Les données ne sont pas dupliquées
+- Les données sont accessibles sans coût de calcul
+- Seule une petite partie de l'arborescence du magasin est mise à jour en cas de changement
