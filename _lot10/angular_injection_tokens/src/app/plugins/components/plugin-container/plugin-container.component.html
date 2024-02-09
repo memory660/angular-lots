@@ -1,0 +1,6 @@
+<p>plugin-container works!</p>
+
+<h1>My Container</h1>
+<button *ngFor="let plugin of plugins" (click)="plugin.action()">
+  {{ plugin.name }}
+</button>
